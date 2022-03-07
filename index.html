@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Kalkulator Sederhana</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form id="formulir" autocomplete="off">
+
+        <div class="judul">
+            <span>kalkulatorku</span>
+        </div>
+
+        <label for="a1">Angka Pertama</label>
+        <br />
+        <input onchange="validasiIsNan(a1, 'a1', '.validationWrapper1')" onfocus="eraseVal(a1)" type="text" name="a1"
+            id="a1" value="Masukan Angka Pertama">
+        <span class="validationWrapper1"></span>
+        <br />
+        <label for="a2">Angka Kedua</label>
+        <br />
+        <input onchange="validasiIsNan(a2, 'a2', '.validationWrapper2')" onfocus="eraseVal(a2)" type="text" name="a2"
+            id="a2" value="Masukan Angka Kedua">
+        <span class="validationWrapper2"></span>
+        <div class="button-operand">
+            <!-- looping on script.js -->
+        </div>
+        <br />
+        <label for="hasil">Hasil</label>
+        <br />
+        <input onclick="validasiIsNan()" type="text" name="hasil" value="0" readonly>
+    </form>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
