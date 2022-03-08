@@ -1,80 +1,41 @@
-// deklarasi dan instansi variabel 
-const frm = document.getElementById("formulir");
-const multiple = document.getElementById("*");
-const divide = document.getElementById("/");
-const plus = document.getElementById("+");
-const minus = document.getElementById("-");
-const batal = document.getElementById("batal");
-let a1 = frm.a1;
-let a2 = frm.a2;
-let hasil = frm.hasil;
-
-// fungsi penghapus value sebelumnya
-function eraseVal(a) {
-    a.value = '';
-};
-
-// fungsi pengecekan apabila NAN atau string kosong maka display class menjadi block. Lalu menambahkan class pada element, dan menampilkan kata dengan innerHTML. Apabila bilangan Numeric, class dihapus dan mengubah nilai display menjadi none.
-function validasiIsNan(a, b, c) {
-    if (isNaN(a.value) || a.value == '') {
-        document.querySelector(c).style.display = 'block';
-        document.getElementById(b).classList.add('remove');
-        document.querySelector(c).innerHTML = '*Harap isi data berupa angka';
-    } else {
-        document.getElementById(b).classList.remove('remove');
-        document.querySelector(c).style.display = 'none';
-    };
-};
-
-// beberapa fungsi penghitungan
-function getResultOperandKali() {
-    hitung(a1.value * a2.value);
-};
-
-function getResultOperandBagi() {
-    hitung(a1.value / a2.value);
-};
-
-// #catatan : pertambahan sering kali dianggap concatenate pada javascript maka merubah tipe datanya ke float agar dapat menghitung bilangan desimal.
-function getResultOperandTambah() {
-    hitung(parseFloat(a1.value) + parseFloat(a2.value));
-};
-
-function getResultOperandKurang() {
-    hitung(a1.value - a2.value);
-};
-
-function getResultOperandAkar() {
-    hitung(Math.pow(a1.value, a2.value));
-};
-
-function getResultOperandBatal() {
-    eraseVal(a1);
-    eraseVal(a2);
-    eraseVal(hasil);
-};
-
-// fungsi untuk menampilkan hasil hitungan dengan logika apabila "NaN" maka alert akan keluar dan mereset dengan function batal
-function hitung(a) {
-    if (isNaN(a)) {
-        alert("Error, Harap isi data berupa angka");
-        getResultOperandBatal();
-    } else {
-        hasil.value = a;
+class Gempa {
+    constructor(lokasi, skala) {
+        this.lokasi = lokasi;
+        this.skala = skala;
     }
-};
 
-// Looping button
-arrOpr = ["*", "/", "+", "-", "^", "batal"];
-let temp = '';
-let cadanganOperand;
-for (let opr of arrOpr) {
-    if (opr == "*") cadanganOperand = "Kali";
-    else if (opr == "/") cadanganOperand = "Bagi";
-    else if (opr == "+") cadanganOperand = "Tambah";
-    else if (opr == "-") cadanganOperand = "Kurang";
-    else if (opr == "^") cadanganOperand = "Akar";
-    else if (opr == "batal") cadanganOperand = "Batal";
-    temp += `<button onclick="getResultOperand${cadanganOperand}()" type="button" id="${opr}" value="${opr}">${opr}</button>`;
+    dampak() {
+        if (this.skala > 0 && this.skala <= 2) return 'tidak terasa';
+        else if (this.skala > 2 && this.skala <= 4) return 'bangunan retak - retak';
+        else if (this.skala > 4 && this.skala <= 6) return 'bangunan roboh';
+        else if (this.skala > 6) return 'bangunan roboh dan berpotensi tsunami';
+    }
+
+    cetakKeteranganLengkap() {
+        return `<td>${this.lokasi}</td><td>${this.skala}</td><td>${this.dampak()}</td>`;
+    }
 }
-document.querySelector(".button-operand").innerHTML = temp;
+
+const gempa1 = new Gempa('Jakarta', 2.3);
+const gempa2 = new Gempa('Bogor', 2.5);
+const gempa3 = new Gempa('Depok', 1);
+const gempa4 = new Gempa('Tanggerang', 1.5);
+const gempa5 = new Gempa('Bekasi', 1.8);
+const gempa6 = new Gempa('Banten', 6.2);
+const gempa7 = new Gempa('Temanggung', 7);
+const gempa8 = new Gempa('Yogyakarta', 5);
+const gempa9 = new Gempa('Deli Serdang', 4);
+const gempa10 = new Gempa('Tegal', 2);
+
+arraVarGempa = [gempa1, gempa2, gempa3, gempa4, gempa5, gempa6, gempa7, gempa8, gempa9, gempa10]
+let temp = '';
+
+for (const varGempa of arraVarGempa) {
+    temp += `<tr>${varGempa.cetakKeteranganLengkap()}
+                </tr>`;
+}
+
+let struckturTable =
+    `<table><thead><tr class="head-table"><th colspan="3">INFORMASI GEMPA</th></tr><tr><th>Lokasi</th><th>Skala</th><th>Deskripsi</th></tr></thead><tbody>${temp}</tbody></table>`;
+
+document.write(struckturTable);

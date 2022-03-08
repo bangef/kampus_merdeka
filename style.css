@@ -5,7 +5,7 @@
 }
 
 :root {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 body {
@@ -14,90 +14,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: whitesmoke;
+    color: #672f0a;
 }
 
-form {
-    width: 30%;
-    background: rgb(9, 9, 121);
-    background: linear-gradient(133deg, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
-    padding: 1rem;
-    border-radius: 1rem;
+.head-table {
+    font-weight: 900;
+    font-size: 3rem;
 }
 
-form .judul {
-    text-transform: capitalize;
-    font-weight: 700;
-    font-size: 2.5rem;
+table {
+    width: 50%;
+}
+
+thead {
+    color: #a97b4c;
+    background-color: #672f0a;
+}
+
+table,
+tr,
+th,
+td,
+thead,
+tbody {
     text-align: center;
-    color: whitesmoke;
-    border-bottom: 3px dashed whitesmoke;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-}
-
-form label {
-    text-transform: capitalize;
-    font-size: 1rem;
-    font-weight: 600;
-    color: whitesmoke;
-}
-
-input[type="text"] {
-    width: 100%;
-    height: 3rem;
-    border-radius: 0.5rem;
-    border: none;
-    margin: 0.2rem 0 1rem 0;
+    border: 1px solid black;
+    border-collapse: collapse;
     padding: 0.5rem;
 }
 
-input[type="text"]:not(:focus) {
-    color: grey;
-    font-weight: 600;
-}
-
-.button-operand {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-button[type="button"] {
-    height: 2rem;
-    width: 2rem;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.2rem;
-    border: none;
-    border-radius: 0.5rem;
-}
-
-button[type="button"]:hover {
-    height: 2rem;
-    width: 2rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 0.2rem;
-    border: none;
-    border-radius: 0.5rem;
-}
-
-button[type="button"]:nth-child(1n+6) {
-    width: auto;
-}
-
-.remove {
-    border: 1px solid tomato !important;
-    color: tomato !important;
-}
-
-.validationWrapper1,
-.validationWrapper2 {
-    /* display: none; */
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: tomato;
-    text-transform: capitalize;
-    margin-bottom: 1rem;
+tbody tr:nth-child(even) {
+    background-color: #a97b4c;
 }
