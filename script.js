@@ -59,10 +59,6 @@ function hitung(a) {
     if (isNaN(a)) {
         alert("Error, Harap isi data berupa angka");
         getResultOperandBatal();
-        document.getElementById(b).classList.remove('remove');
-        document.querySelector(c).style.display = 'none';
-        document.getElementById(b).classList.remove('remove');
-        document.querySelector(c).style.display = 'none';
     } else {
         hasil.value = a;
     }
