@@ -1,3 +1,4 @@
+// Membuat class Gempa
 class Gempa {
     constructor(lokasi, skala) {
         this.lokasi = lokasi;
@@ -16,6 +17,7 @@ class Gempa {
     }
 }
 
+// instansi variabel dari class Gempa
 const gempa1 = new Gempa('Jakarta', 2.3);
 const gempa2 = new Gempa('Bogor', 2.5);
 const gempa3 = new Gempa('Depok', 1);
@@ -27,15 +29,21 @@ const gempa8 = new Gempa('Yogyakarta', 5);
 const gempa9 = new Gempa('Deli Serdang', 4);
 const gempa10 = new Gempa('Tegal', 2);
 
-arraVarGempa = [gempa1, gempa2, gempa3, gempa4, gempa5, gempa6, gempa7, gempa8, gempa9, gempa10]
+// instansi array arrVaruntuk looping
+const arrVarGempa = [gempa1, gempa2, gempa3, gempa4, gempa5, gempa6, gempa7, gempa8, gempa9, gempa10]
+
+// variabel penampung dari looping
 let temp = '';
 
-for (const varGempa of arraVarGempa) {
+// perulangan for of, untuk melooping arrVarGempa
+for (const varGempa of arrVarGempa) {
     temp += `<tr>${varGempa.cetakKeteranganLengkap()}
                 </tr>`;
 }
 
-let struckturTable =
+// variabel penampung untuk struktur html
+const struckturTable =
     `<table><thead><tr class="head-table"><th colspan="3">INFORMASI GEMPA</th></tr><tr><th>Lokasi</th><th>Skala</th><th>Deskripsi</th></tr></thead><tbody>${temp}</tbody></table>`;
 
+// method untuk output keluaran hasil variabel strukturtable
 document.write(struckturTable);
