@@ -5,38 +5,245 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas Kalkulator Sederhana</title>
+    <title>Tugas 8 jquery</title>
     <link rel="stylesheet" href="./style.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <form id="formulir" autocomplete="off">
+    <!-- navbar-pilih-menu -->
+    <nav>
+        <ul>
+            <li id="tugas1" class="active">Tugas 1</li>
+            <li id="tugas2">Tugas 2</li>
+        </ul>
+    </nav>
+    <!-- end-navbar-pilih-menu -->
 
-        <div class="judul">
-            <span>kalkulatorku</span>
+    <!-- tugas-1 : animasi gambar -->
+    <div class="animation-image">
+        <div class="heading">
+            <h1>
+                Animasi Gambar Serangga
+            </h1>
+            <p>📢 Klik nama hewan untuk bermain 📢</p>
         </div>
+        <div class="wrapper-box">
+            <div class="box-lalat">
+                <button type="button" id="lalat">Lalat</button>
+                <audio id="suaralalat"></audio>
+            </div>
+            <div class="box-capung">
+                <button type="button" id="capung">Capung</button>
+                <audio id="suaracapung"></audio>
+            </div>
+            <div class="box-kumbang">
+                <button type="button" id="kumbang">Kumbang</button>
+                <audio id="suarakumbang"></audio>
+            </div>
+            <div class="box-nyamuk">
+                <button type="button" id="nyamuk">Nyamuk</button>
+                <audio id="suaranyamuk"></audio>
+            </div>
 
-        <label for="a1">Angka Pertama</label>
-        <br />
-        <input onchange="validasiIsNan(a1, 'a1', '.validationWrapper1')" onfocus="eraseVal(a1)" type="text" name="a1"
-            id="a1" value="Masukan Angka Pertama">
-        <span class="validationWrapper1"></span>
-        <br />
-        <label for="a2">Angka Kedua</label>
-        <br />
-        <input onchange="validasiIsNan(a2, 'a2', '.validationWrapper2')" onfocus="eraseVal(a2)" type="text" name="a2"
-            id="a2" value="Masukan Angka Kedua">
-        <span class="validationWrapper2"></span>
-        <div class="button-operand">
-            <!-- looping on script.js -->
         </div>
-        <br />
-        <label for="hasil">Hasil</label>
-        <br />
-        <input onclick="validasiIsNan()" type="text" name="hasil" value="0" readonly>
-    </form>
+    </div>
+    <!-- end-tugas-1 : animasi gambar -->
 
-    <script src="./script.js"></script>
+    <!-- tugas-2 : menampilkan dan menyembunyikan teks -->
+    <div class="wrapper-text hide">
+        <div class="heading">
+            <h1>
+                Profil Lembaga NF COMPUTER
+            </h1>
+            <p>IT Training Solutions</p>
+        </div>
+        <div class="profil-lembaga">
+            <div class="tentang-kami">
+                <div class="sub-head">
+                    <h1>Tentang Kami</h1>
+                    <img class="icon" src="./asset/image/down.png" alt="icon_down">
+                </div>
+                <div class="konten">
+                    <p>
+                        NF COMPUTER adalah bagian dari grup Nurul Fikri yang telah dipercaya oleh masyarakat Indonesia
+                        di bidang pendidikan dan peningkatan sumber daya manusia selama lebih dari 24 tahun.
+                        Alumni-alumninya telah berkiprah dan diakui kualitas kerja dan integritasnya oleh dunia usaha.
+                    </p>
+                    <p>
+                        NF COMPUTER dirintis sejak tahun 1994 dan merupakan sebuah lembaga di bidang pendidikan dan
+                        pelatihan IT (Information Technology). Kami berkomitmen menjadi partner perusahaan Anda dalam
+                        mengembangkan kemampuan serta keahlian SDM di bidang IT. Dengan komitmen tersebut, kami
+                        mempersiapkan tim pengajar yang professional dan berpengalaman di bidang IT.
+                    </p>
+                    <p>
+                        Di Era Industri 4.0 saat ini, teknologi informasi berkembang sangat cepat, oleh karena itu
+                        pengembangan sumber daya manusia di bidang IT menjadi sebuah kebutuhan yang perlu
+                        diprioritaskan. NF COMPUTER menjadi jawaban yang tepat atas kebutuhan pengembangan kompetensi
+                        IT. Sehingga kami selalu berusaha untuk terus berinovasi terhadap teknologi terbaru.
+                    </p>
+                </div>
+            </div>
+            <div class="visi-misi">
+                <div class="sub-head">
+                    <h1>Visi Misi</h1>
+                    <img class="icon" src="./asset/image/down.png" alt="icon_down">
+                </div>
+                <div class="konten">
+                    <p>
+                        <strong>Visi</strong><br />
+                        Menjadi institusi pelatihan yang kompeten dan profesional di bidang pendidikan teknologi
+                        informasi dan komunikasi di berbagai wilayah indonesia.
+                    </p>
+                    <p>
+                        <strong>Misi</strong>
+                        Misi
+                        Membangun, memelihara dan mengembangkan institusi pelatihan bisnis
+                        berdaya saing tinggi,
+                        berkarakter profesional, kompeten, mengedepankan integritas dan tanggung
+                        jawab sosial, dengan
+                        mengembangkan dan menyediakan produk produk pendidikan dan pelatihan
+                        teknologi informasi dan
+                        komunikasi prima.
+                    </p>
+                </div>
+            </div>
+            <div class="deskripsi-bisnis">
+                <div class="sub-head">
+                    <h1>Deskripsi Bisnis</h1>
+                    <img class="icon" src="./asset/image/down.png" alt="icon_down">
+                </div>
+                <div class="konten">
+                    <p>
+                        NF COMPUTER menyelenggarakan Pelatihan dan Pendidikan di bidang Teknologi Informasi dan
+                        Komunikasi (IT Training) yang dibagi menjadi lima produk.
+                        <br />
+                        Pelatihan (training) ini dibagi dalam beberapa kategori produk yaitu :
+                    </p>
+                    <ul class="list-deskripsi">
+                        <li>
+                            Public Class, merupakan short course bidang TIK (Teknologi Informasi dan Komunikasi) yang
+                            berbasis Linux maupun Windows.
+                        </li>
+                        <li>
+                            Exclusive Class, merupakan paket training yang diberikan kepada customer dengan durasi 6-8
+                            jam perhari dengan jumlah peserta minimal 2 orang dan pelaksanaan pelatihannya di NF
+                            Computer.
+                        </li>
+                        <li>
+                            In House/In Company Training, yaitu pelatihan TIK yang dikustomisasi untuk kebutuhan
+                            perusahaan-perusahaan
+                        </li>
+                    </ul>
+                    <p>
+                        Paket bisnis khusus dibagi ke dalam beberapa kategori produk yang dikelola secara profesional
+                        oleh NF COMPUTER yaitu :
+                    </p>
+                    <ul class="list-deskripsi">
+                        <li>
+                            Kerjasama Pendidikan Sekolah, yaitu Divisi khusus pendidikan sekolah dimana NF COMPUTER
+                            bekerjasama dalam hal : Kerjasama pembangunan Lab Komputer, Pengajaran Komputer dan
+                            kombinasi antara keduanya.
+                        </li>
+                        <li>
+                            Usulan Produk lain: Produk-produk yang menurut lokasi diminati oleh pasar tapi belum ada
+                            dalam daftar produk pelatihan dan pendidikan NF COMPUTER, dapat diajukan oleh cabang untuk
+                            menjadi produk yang dipertimbangkan sebagai produk dan akan menjadi bagian dari
+                            penyelenggaraan pelatiahan dan pendidikan di cabang tersebut pada periode yang dianggap
+                            tepat oleh NF COMPUTER.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end-tugas-2 : menampilkan dan menyembunyikan teks -->
+    <script type="text/javascript" src="./jquery-v-3-6-0.js"></script>
+    <script>
+        $(document).ready(() => {
+            // navbar
+            $('#tugas1').click(() => {
+                $('#tugas1').addClass('active');
+                $('#tugas2').removeClass('active');
+                $('.animation-image').removeClass('hide');
+                $('.wrapper-text').addClass('hide');
+            });
+
+            $('#tugas2').click(() => {
+                $('#tugas2').addClass('active');
+                $('#tugas1').removeClass('active');
+                $('.animation-image').addClass('hide');
+                $('.wrapper-text').removeClass('hide');
+            });
+            // end-navbar
+
+            // tugas-1
+            // lalat
+            $('#lalat').click(() => {
+                $('.box-lalat').css({
+                    background: 'url("./asset/image/lalat.webp")'
+                });
+                $('#suaralalat').attr({
+                    'src': './asset/sound/suara-lalat.mp3',
+                    'volume': 1,
+                    'autoplay': 'autoplay'
+                }).appendTo('#suaralalat');
+            });
+            // capung
+            $('#capung').click(() => {
+                $('.box-capung').css({
+                    background: 'url("./asset/image/capung.webp")'
+                });
+                $('#suaracapung').attr({
+                    'src': './asset/sound/suara-capung.mp3',
+                    'volume': 1,
+                    'autoplay': 'autoplay'
+                }).appendTo('#suaracapung');
+            });
+            // kumbang
+            $('#kumbang').click(() => {
+                $('.box-kumbang').css({
+                    background: 'url("./asset/image/kumbang.webp")'
+                });
+                $('#suarakumbang').attr({
+                    'src': './asset/sound/suara-kumbang.mp3',
+                    'volume': 1,
+                    'autoplay': 'autoplay'
+                }).appendTo('#suarakumbang');
+            });
+            // nyamuk
+            $('#nyamuk').click(() => {
+                $('.box-nyamuk').css({
+                    background: 'url("./asset/image/nyamuk.webp")'
+                });
+                $('#suaranyamuk').attr({
+                    'src': './asset/sound/suara-nyamuk.mp3',
+                    'volume': 1,
+                    'autoplay': 'autoplay'
+                }).appendTo('#suaranyamuk');
+            });
+            // end-tugas-1
+
+            // tugas-2
+            // tentang-kami
+            $('.tentang-kami').click(() => {
+                $('.tentang-kami .konten').slideToggle("slow");
+            });
+
+            // visi-misi
+            $('.visi-misi').click(() => {
+                $('.visi-misi .konten').slideToggle("slow");
+            });
+
+            // deskripsi-bisnis
+            $('.deskripsi-bisnis').click(() => {
+                $('.deskripsi-bisnis .konten').slideToggle("slow");
+            });
+            // end-tugas-2
+        });
+    </script>
 </body>
 
 </html>
