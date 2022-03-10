@@ -17,4 +17,3 @@
 ![](./asset/image/rwd-landscape-tab.png)
 #### Screenshoot RWD *MOBILE*
 ![](./asset/image/rwd-mobile.png)
->>>>>>> 8d051127597d3bf6bee66b29ab652e296a7548d2
