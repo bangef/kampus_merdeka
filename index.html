@@ -5,38 +5,273 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas Kalkulator Sederhana</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Tugas 1 Bootsrap - Layouting Web</title>
+    <link rel="stylesheet" href="./asset/bootstrap-5.0.2/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <form id="formulir" autocomplete="off">
-
-        <div class="judul">
-            <span>kalkulatorku</span>
+    <!-- section-1 - banner/carousel -->
+    <section class="bg-dark">
+        <div class="container-fluid">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="./asset/image/img_banner_1.webp" class="d-block w-100" alt="banner-1">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="./asset/image/img_banner_2.webp" class="d-block w-100" alt="banner-2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./asset/image/img_banner_3.webp" class="d-block w-100" alt="banner-3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
+    </section>
+    <!-- end section-1 - banner/carousel -->
 
-        <label for="a1">Angka Pertama</label>
-        <br />
-        <input onchange="validasiIsNan(a1, 'a1', '.validationWrapper1')" onfocus="eraseVal(a1)" type="text" name="a1"
-            id="a1" value="Masukan Angka Pertama">
-        <span class="validationWrapper1"></span>
-        <br />
-        <label for="a2">Angka Kedua</label>
-        <br />
-        <input onchange="validasiIsNan(a2, 'a2', '.validationWrapper2')" onfocus="eraseVal(a2)" type="text" name="a2"
-            id="a2" value="Masukan Angka Kedua">
-        <span class="validationWrapper2"></span>
-        <div class="button-operand">
-            <!-- looping on script.js -->
+    <!-- section-2 - navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </div>
+            </div>
         </div>
-        <br />
-        <label for="hasil">Hasil</label>
-        <br />
-        <input onclick="validasiIsNan()" type="text" name="hasil" value="0" readonly>
-    </form>
+    </nav>
+    <!-- end section-2 - navbar -->
 
-    <script src="./script.js"></script>
+    <!-- section-3 - main -->
+    <section class=py-5>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- breakpoint -->
+                    <h3 class="text-center py-2">Breakpoint</h3>
+                    <div class="row">
+                        <div class="col-sm-6 py-5 bg-primary">
+                            Ini col-sm-6
+                        </div>
+                        <div class="col-sm-6 py-5 bg-danger">
+                            Ini col-sm-6
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 py-5 bg-warning">
+                            Ini col-md-6
+                        </div>
+                        <div class="col-md-6 py-5 bg-success">
+                            Ini col-md-6
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 py-5 bg-info">
+                            Ini col-lg-6
+                        </div>
+                        <div class="col-lg-6 py-5 bg-dark text-white">
+                            Ini col-lg-6
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 py-5 alert-danger">
+                            Ini col-xl-6
+                        </div>
+                        <div class="col-xl-6 py-5 alert-primary">
+                            Ini col-xl-6
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xxl-6 py-5 alert-success">
+                            Ini col-xxl-6
+                        </div>
+                        <div class="col-xxl-6 py-5 alert-warning">
+                            Ini col-xxl-6
+                        </div>
+                    </div>
+                    <!-- end-breakpoint -->
+
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-center pb-2">Tabs</h3>
+                    <!-- content-tabs -->
+                    <ul class="nav nav-tabs pb-2">
+                        <li class="nav-item">
+                            <a class="nav-link text-capitalize" href="#tabs-1-accordion">tabs-1-accordion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-capitalize" href="#tabs-2-table">tabs-2-table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tabs-3-cards">tabs-3-cards</a>
+                        </li>
+                    </ul>
+                    <!-- end content-tabs -->
+                    <!-- content Accordion -->
+                    <h3 class="text-center pb-2" id="tabs-1-accordion">Accordion Flush</h3>
+                    <!-- content Accordion flush-->
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Accordion ke - 1
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Lorem ipsum dolor, sit amet consectetur adipisicing
+                                    elit.
+                                    Rerum, qui?
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                        Accordion ke - 2
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Quos, soluta.
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            aria-expanded="false" aria-controls="flush-collapseThree">
+                                            Accordion ke - 3
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing
+                                            elit. Iste, qui?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end-content Accordion flush-->
+
+                    <!-- content Table -->
+                    <h3 class="text-center pb-2" id="tabs-2-table">Table</h3>
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <td>
+                                    No
+                                </td>
+                                <td>
+                                    Nama
+                                </td>
+                                <td>
+                                    Alamat
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>lorem</td>
+                                <td>ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>lorem</td>
+                                <td>ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>lorem</td>
+                                <td>ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>lorem</td>
+                                <td>ipsum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- end content Table -->
+                    <!-- content cards -->
+                    <h3 class="text-center pb-2" id="tabs-3-cards">Cards</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./asset/image/img_banner_1.webp" class="card-img-top" alt="foto">
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Assumenda,
+                                        fugiat cumque dolor amet dignissimos magni!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./asset/image/img_banner_1.webp" class="card-img-top" alt="foto">
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Assumenda,
+                                        fugiat cumque dolor amet dignissimos magni!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./asset/image/img_banner_1.webp" class="card-img-top" alt="foto">
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Assumenda,
+                                        fugiat cumque dolor amet dignissimos magni!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end content cards -->
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <!-- gambar -->
+                    <h3 class="pb-2">Gambar</h3>
+                    <img src="./asset/image/img_banner_1.webp" class="img-thumbnail py-2" alt="gambar-thumbnail">
+                    <img src="./asset/image/img_banner_1.webp" class="img-fluid py-2" alt="gambar-fluid">
+                    <!-- end-gambar -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section-3 - main -->
+    <footer class="col-md-12 alert alert-dark text-center fw-bold my-0" role="alert">
+        © 2022 - bangef
+    </footer>
+    <script src="./asset/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
